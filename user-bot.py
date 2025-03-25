@@ -21,6 +21,10 @@ PHONE_NUMBER = os.environ["PHONE_NUMBER"]
 # Initialize Telethon client
 client = TelegramClient("userbot.session", API_ID, API_HASH)
 
+@app.route("/health")
+def health_check():
+    return jsonify({"status": "ok", "service": "user-bot"}), 200
+
 @app.route("/forward", methods=["POST"])
 def forward_message():
     """Endpoint to forward messages."""

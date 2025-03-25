@@ -1,28 +1,24 @@
-# Telegram Download Bot
+# Home Download Manager Bot
 
-A secure Telegram bot for managing downloads via Aria2 RPC, with companion user bot service.
+A simple Telegram bot for managing downloads on your home server via Aria2 RPC.
 
 ## Features
 - Torrent/Magnet link handling
 - Download progress tracking
-- Secure environment configuration
-- Dockerized deployment
-- CI/CD pipeline (GitHub Actions)
+- Casa OS optimized deployment
+- Local network integration
+- Family-friendly access controls
 
-## Implementation Plan
+## Home Server Setup
 
 ```mermaid
-gantt
-    title Project Timeline
-    dateFormat  YYYY-MM-DD
-    section Completed
-    Security Hardening      :done, 2025-03-26, 5d
-    CI/CD Setup             :done, 2025-03-27, 3d
+graph TD
+    A[Install Docker] --> B[Configure .env]
+    B --> C[Start Containers]
+    C --> D[Access via Telegram]
     
-    section Next Phase
-    Enhanced Monitoring     :active, 2025-04-01, 7d
-    User Authentication     :2025-04-08, 5d
-    Mobile App Integration  :2025-04-13, 10d
+    C -->|Backups| C1[Local NAS]
+    C -->|Monitoring| C2[Casa OS UI]
 ```
 
 ## Getting Started
