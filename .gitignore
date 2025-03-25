@@ -1,0 +1,16 @@
+# Environment files
+.env
+*.env.local
+
+# Logs
+logs/
+*.log
+
+# Docker
+docker-compose.yml.bak
+build/
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]

@@ -1,0 +1,58 @@
+name: telegram-bot
+services:
+    telegram-bot:
+        build:
+            context: /DATA/AppData/telegram-bot
+            dockerfile: Dockerfile
+        cpu_shares: 90
+        command:
+            - python
+            - /app/download_bot.py
+        container_name: telegram-bot
+        deploy:
+            resources:
+                limits:
+                    memory: "16634609664"
+        environment:
+            BOT_TOKEN: ${BOT_TOKEN}  # Now properly using environment variable
+            DOWNLOAD_PATH: /downloads
+        image: telegram-bot:latest
+        labels:
+            icon: https://i.postimg.cc/fbskFJFT/pngegg.png
+        logging:
+            driver: json-file
+            options:
+                max-file: "3"
+                max-size: 10m
+        network_mode: bridge
+        restart: on-failure
+        volumes:
+            - type: bind
+              source: /DATA/AppData/telegram-bot
+              target: /app
+              bind:
+                create_host_path: true
+            - type: bind
+              source: /media/Home-Server/Media/Downloading
+              target: /downloads
+              bind:
+                create_host_path: true
+            - type: bind
+              source: /DATA/AppData/telegram-bot/logs
+              target: /app/logs
+              bind:
+                create_host_path: true
+networks:
+    default:
+        name: telegram-bot_default
+x-casaos:
+    author: self
+    category: self
+    hostname: ""
+    icon: https://i.postimg.cc/fbskFJFT/pngegg.png
+    index: /
+    is_uncontrolled: false
+    port_map: ""
+    scheme: http
+    title:
+        custom: telegram-bot
