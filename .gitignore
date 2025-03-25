@@ -8,6 +8,7 @@ logs/
 
 # Docker
 docker-compose.yml.bak
+telegram-bot.yaml
 build/
 .DS_Store
 

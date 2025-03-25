@@ -16,7 +16,7 @@ services:
         environment:
             BOT_TOKEN: ${BOT_TOKEN}  # Now properly using environment variable
             DOWNLOAD_PATH: /downloads
-        image: telegram-bot:latest
+        image: sparshbajaj14/telegram-bot:latest
         labels:
             icon: https://i.postimg.cc/fbskFJFT/pngegg.png
         logging:
