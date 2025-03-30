@@ -1,6 +1,7 @@
 # Home Download Manager Bot
 
 A simple Telegram bot for managing downloads on your home server via Aria2 RPC.
+Prebuilt image - sparshbajaj14/telegram-bot:latest
 
 ## Features
 - Torrent/Magnet link handling
